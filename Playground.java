@@ -8,7 +8,7 @@ public class Playground {
 
     public static void main(String[] args) {
         MyThread myThread = new MyThread();
-        myThread.setName("myThread");
+        myThread.setName("separateTrade1");
         myThread.start();
         System.out.println("Sleeping in " + Thread.currentThread().getName());
         try {
