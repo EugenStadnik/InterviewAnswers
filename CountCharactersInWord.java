@@ -1,10 +1,8 @@
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Playground {
+public class CountCharactersInWord {
 
     public static void main(String[] args) {
         MyThread myThread = new MyThread();
@@ -12,7 +10,7 @@ public class Playground {
         myThread.start();
         System.out.println("Sleeping in " + Thread.currentThread().getName());
         try {
-            Thread.currentThread().sleep(2000);
+            Thread.sleep(2000);
             System.out.println("UNSleeping in " + Thread.currentThread().getName());
             myThread.interrupt();
         } catch (InterruptedException ie) {
@@ -21,6 +19,7 @@ public class Playground {
         String[] names = {"Alina", "Yevhen", "Maria", "Oleh"};
         System.out.println(deleteFirstCharacterAndSort(Arrays.asList(names)));
         System.out.println(countCharactersInWord("a baba galamaga"));
+
     }
 
     static class MyThread extends Thread {
@@ -28,7 +27,7 @@ public class Playground {
         public void run() {
             for (int i = 0; 2>1; i++) {
                 try {
-                    Thread.currentThread().sleep(500);
+                    sleep(500);
                 } catch (InterruptedException e) {
                     System.out.println(Thread.currentThread().getName() + " thread is interrupted inside run().");
                     break;
@@ -56,4 +55,5 @@ public class Playground {
     public static List<String> sortAndDeleteFirstCharacter(List<String> words) {
         return words.stream().sorted().map(name -> name.replace("" + name.charAt(0), "")).collect(Collectors.toList());
     }
+
 }
