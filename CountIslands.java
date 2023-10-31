@@ -58,7 +58,7 @@ public class CountIslands {
         for (int rowIndex = 0; rowIndex < map.length; rowIndex++) {
             for (int colIndex = 0; colIndex < map[rowIndex].length; colIndex++) {
                 if (map[rowIndex][colIndex] == '1') {
-                    map = resetLand(map, rowIndex, colIndex);
+                    resetLand(map, rowIndex, colIndex);
                     result++;
                 }
             }
@@ -66,21 +66,20 @@ public class CountIslands {
         return result;
     }
 
-    public static char[][] resetLand(char[][] map, int row, int col) {
+    public static void resetLand(char[][] map, int row, int col) {
         map[row][col] = '0';
         if(row > 0 && map[row - 1][col] == '1') {
-            map = resetLand(map, row - 1, col);
+            resetLand(map, row - 1, col);
         }
         if(map.length > row + 1 && map[row + 1][col] == '1') {
-            map = resetLand(map, row + 1, col);
+            resetLand(map, row + 1, col);
         }
         if(col > 0 && map[row][col - 1] == '1') {
-            map = resetLand(map, row, col - 1);
+            resetLand(map, row, col - 1);
         }
         if(map[row].length > col + 1 && map[row][col + 1] == '1') {
-            map = resetLand(map, row, col + 1);
+            resetLand(map, row, col + 1);
         }
-        return map;
     }
 
 
