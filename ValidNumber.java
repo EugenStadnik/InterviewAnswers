@@ -1,5 +1,5 @@
 import java.util.List;
-//https://leetcode.com/problems/valid-number/
+//https://leetcode.com/problems/valid-number/       HARD
 public class ValidNumber {
 
     public static void main(String[] args) {

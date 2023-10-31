@@ -1,5 +1,5 @@
 import java.util.*;
-//https://leetcode.com/problems/single-number/
+//https://leetcode.com/problems/single-number/      EASY
 public class SingleNumber {
 
     public static void main(String[] args) {
